@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta name="description" content="Process Tracing with Qualtrics by Eric DeRosia">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<title>Process Tracing with Qualtrics by Eric DeRosia</title>
+</head>
+<body>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+	window.onload=function(){
+	
+		var get_substitute = "";
+		var to_add_to_Qualtrics_embedded_data = "These are the variables to add to the Qualtrics embedded data:<br>";
+		
+		var variables = document.cookie.split(";");
+		for (var i=0;i<variables.length;i++) {
+			var pair = variables[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length)
+			}
+			if (pair[0].substring(0,4) == "#**#") {
+				get_substitute = get_substitute + "&" + pair[0].substring(4,pair[0].length-4) + "=" + pair[1].substring(4,pair[1].length-4);
+				to_add_to_Qualtrics_embedded_data = to_add_to_Qualtrics_embedded_data + pair[0].substring(4,pair[0].length-4) + " <br>";
+			}
+		}
+
+		// The SID of Qualtrics q're part 3;
+		var Qualtrics_SID = "SV_1MNjqYZH9rka3el";
+		
+		// to display the list of variables that need to be embedded in Qualtrics q're part 3 **rather than** processing the q're like normal, uncomment the following line;
+		// document.write(to_add_to_Qualtrics_embedded_data);
+			
+		// to display the list of variables that need to be embedded in Qualtrics q're part 3 **rather than** processing the q're like normal, comment the following line;
+		location.replace('https://byu.qualtrics.com/SE/?SID=' + Qualtrics_SID + get_substitute);
+
+	
+	}
+				
+</script>
+
+
+</body>
+</html>

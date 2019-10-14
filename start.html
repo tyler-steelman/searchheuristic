@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta name="description" content="Process Tracing with Qualtrics by Eric DeRosia">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<title>Process Tracing with Qualtrics </title>
+</head>
+<body bgcolor="#DBD3B2" text="#177182" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+	function retrieve_from_URL(var_name) {
+		var query = window.location.search.substring(1);
+		
+		var get_passed = query.split("&");
+		for (var i=0;i<get_passed.length;i++) {
+			var pair = get_passed[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length)
+			}
+			if (pair[0] == var_name) {
+				return pair[1];
+			}
+		}
+		//alert('Run error: Retrieve From URL ' + var_name + ' not found');
+	}
+	
+	function write_to_cookie(var_name, value_to_write) {
+		document.cookie = "#**#" + escape(var_name) + "#**#=#**#" + escape(value_to_write) + "#**#";
+	}
+
+	function read_from_cookie(var_name) {
+		var query = document.cookie;
+		
+		var cookie_passed = query.split("; ");
+		for (var i = 0; i <cookie_passed.length; i++) {
+			var pair = cookie_passed[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length);
+			}
+			if (pair[0] == "#**#" + var_name + "#**#") {
+				return unescape(pair[1].substring(4,pair[1].length-4));
+			}
+		}
+		//alert('Run error: Read From Cookie ' + var_name + ' not found');
+	}
+
+
+	window.onload=function(){
+	
+		// pulls data from q're part 1 and carries it to part 2's data.  (Could pull in all the variables; here only pulls in the ResponseID.)
+		var result = retrieve_from_URL("Part_1_ResponseID");
+		write_to_cookie("Part_1_ResponseID",result);
+		
+		// The filename that should be called when the current screen is completed processing;					
+		next_screen_name = "main.html";
+				
+		write_to_cookie('info_board_record',' ');
+
+		location.replace(next_screen_name);
+	}
+	
+</script>
+
+
+
+
+
+					
+</body>
+</html>

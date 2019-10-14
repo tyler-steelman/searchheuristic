@@ -1,0 +1,208 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta name="description" content="Process Tracing with Qualtrics by Eric DeRosia">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<title>Process Tracing with Qualtrics </title>
+</head>
+<body bgcolor="#DBD3B2" text="#177182" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+	var start_time, end_time;
+
+	function retrieve_from_URL(var_name) {
+		var query = window.location.search.substring(1);
+		
+		var get_passed = query.split("&");
+		for (var i=0;i<get_passed.length;i++) {
+			var pair = get_passed[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length)
+			}
+			if (pair[0] == var_name) {
+				return pair[1];
+			}
+		}
+		alert('Run error: Retrieve From URL ' + var_name + ' not found');
+	}
+	
+	function write_to_cookie(var_name, value_to_write) {
+		document.cookie = "#**#" + escape(var_name) + "#**#=#**#" + escape(value_to_write) + "#**#";
+	}
+
+	function read_from_cookie(var_name) {
+		var query = document.cookie;
+		
+		var cookie_passed = query.split("; ");
+		for (var i = 0; i <cookie_passed.length; i++) {
+			var pair = cookie_passed[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length);
+			}
+			if (pair[0] == "#**#" + var_name + "#**#") {
+				return unescape(pair[1].substring(4,pair[1].length-4));
+			}
+		}
+		alert('Run error: Read From Cookie ' + var_name + ' not found');
+	}
+
+
+	window.onload=function(){
+		
+	  start_time = new Date();
+			
+	}
+	
+	
+</script>
+
+
+
+
+<br>
+<table id="stimuli_table" bgcolor="#FDF7DD" width="67%" border="0" align="center" cellspacing="15" cellpadding="10">
+	<tr>
+		<td align="left" colspan="3">
+			<center><h2><span style="color:#00a00b;">Candidate Information and Policy Positions</span></h2></center>
+
+		</td>
+	</tr>
+	<tr valign="top">
+		<td align="center" colspan="3">
+			<table bgcolor="#FDF7DD" width="85%" border="1" align="center" cellspacing="0" cellpadding="10">
+				<tr>
+					<td align="center">
+						Information on a variety of candidates and their positions is available to you in the menu below.<br>
+						Please click on any information you would like to see<br>
+						while you make your evaluation of which candidate you will choose to support.<br>
+						<br>
+						When you are finished making your evaluation of the candidates and their positions, <br>
+						please choose "I am finished with my evaluation" to move to the next portion of this exercise.
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+
+	<tr valign="top">
+
+		<td style="text-align:center; vertical-align:middle; width:33%; height:60px; background-color:#99badd">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page1.html');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			Candidate #1 - Guns
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:33%; height:60px; background-color:#99badd">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page2.html');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+<span style="font-size: 70%;">Information about ...</span><br>
+			Candidate #1 - Abortion
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:33%; height:60px; background-color:#99badd">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.html');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			Candidate #1 - Job Growth
+			</a>
+		</td>
+		
+	</tr>
+
+
+	<tr valign="top">
+
+		<td align="center" width="33%">
+		</td>
+
+		<td align="center" width="33%" bgcolor="#4962c9">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('end.html');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#00017a;text-decoration: none;
+				"
+			>
+			<br>
+			I am finished with my evaluation<br>
+			<br>
+			</a>
+		</td>
+
+		<td align="center" width="33%" >
+		</td>
+	</tr>
+
+
+<table>
+	
+			
+
+
+					
+</body>
+</html>
