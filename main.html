@@ -1,0 +1,1015 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta name="description" content="Adapted From Process Tracing with Qualtrics by Eric DeRosia">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<title>Process Tracing with Qualtrics </title>
+</head>
+<body bgcolor="#DBD3B2" text="#177182" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+	var start_time, end_time;
+
+	function retrieve_from_URL(var_name) {
+		var query = window.location.search.substring(1);
+		
+		var get_passed = query.split("&");
+		for (var i=0;i<get_passed.length;i++) {
+			var pair = get_passed[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length)
+			}
+			if (pair[0] == var_name) {
+				return pair[1];
+			}
+		}
+		alert('Run error: Retrieve From URL ' + var_name + ' not found');
+	}
+	
+	function write_to_cookie(var_name, value_to_write) {
+		document.cookie = "#**#" + escape(var_name) + "#**#=#**#" + escape(value_to_write) + "#**#";
+	}
+
+	function read_from_cookie(var_name) {
+		var query = document.cookie;
+		
+		var cookie_passed = query.split("; ");
+		for (var i = 0; i <cookie_passed.length; i++) {
+			var pair = cookie_passed[i].split("=");
+			if (pair[0].substring(0,1)==" ") {
+				pair[0]=pair[0].substring(1,pair[0].length);
+			}
+			if (pair[0] == "#**#" + var_name + "#**#") {
+				return unescape(pair[1].substring(4,pair[1].length-4));
+			}
+		}
+		alert('Run error: Read From Cookie ' + var_name + ' not found');
+	}
+
+
+	window.onload=function(){
+		
+	  start_time = new Date();
+			
+	}
+	
+	
+</script>
+
+
+
+
+<br>
+<table id="stimuli_table" bgcolor="#FDF7DD" width="67%" border="0" align="center" cellspacing="15" cellpadding="10">
+	<tr>
+	</tr>
+	<tr valign="top">
+		<td align="center" colspan="8">
+This is where some text will go. 
+		</td>
+	</tr>
+
+	<tr valign="top">
+
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;"> </span><br>
+			</a>
+		</td>
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size: 50%;">Economy</span><br>
+			</a>
+		</td>
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size: 50%;">Health</span><br>
+			</a>
+		</td>
+
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size: 50%;">Abortion</span><br>
+			</a>
+		</td>
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size: 50%;">Gun Control</span><br>
+			</a>
+		</td>
+		
+        <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size: 50%;">Imm.</span><br>
+			</a>
+		</td>
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size: 50%;">Envir.</span><br>
+			</a>
+		</td>
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;">Edu.</span><br>
+			</a>
+		</td>
+		</tr>
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;">Cand. A</span><br>
+			</a>
+		</td>
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page1.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #1
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page2.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #2
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #3
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #4
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #5
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #6
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #7
+			</a>
+		</td>
+		
+	</tr>
+	
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;">Cand. B</span><br>
+			</a>
+		</td>
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page1.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #1
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page2.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #2
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #3
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #4
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #5
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #6
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #7
+			</a>
+		</td>
+		
+		
+	</tr>
+	
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;">Cand. C</span><br>
+			</a>
+		</td>
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page1.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #1
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page2.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #2
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #3
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #4
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #5
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #6
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #7
+			</a>
+		</td>
+		
+		
+	</tr>
+	
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;">Cand. D</span><br>
+			</a>
+		</td>
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page1.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #1
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page2.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #2
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #3
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #4
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #5
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #6
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #7
+			</a>
+		</td>
+		
+		
+	</tr>
+	
+		
+	    <td style="text-align:center; vertical-align:middle; width:5px; height:5px>
+
+			<span style="font-size:50%;">Cand. E</span><br>
+			</a>
+		</td>
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page1.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;"><img src="mag.png" style="margin-left:0px;float: center;">
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page2.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #2
+			</a>
+		</td>
+
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #3
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #4
+			</a>
+		</td>
+		
+		<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #5
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #6
+			</a>
+		</td>
+		
+			<td style="text-align:center; vertical-align:middle; width:20px; height:20px; background-color:#a4fcab">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('page3.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#177182;text-decoration: none;
+				"
+			>
+
+			<span style="font-size: 70%;">Information about ...</span><br>
+			topic #7
+			</a>
+		</td>
+		
+		
+	</tr>
+
+
+
+<table>
+	
+			
+
+
+					
+</body>
+</html>
