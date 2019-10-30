@@ -1003,6 +1003,39 @@ This is where some text will go.
 		
 	</tr>
 
+						     
+	<tr valign="top">
+
+		<td align="center" width="33%">
+		</td>
+
+		<td align="center" width="33%" bgcolor="#00c40f">
+			<a href=
+				"javascript:
+					var info_board_record = read_from_cookie('info_board_record');
+	  			end_time = new Date();
+				  var elapsed_time = end_time - start_time; 
+					var info_board_record = info_board_record + '###main@@@' + elapsed_time;
+					write_to_cookie('info_board_record',info_board_record);
+					location.replace('end.htm');
+				"
+				onMouseover="
+					status=''; 
+					return true;
+				"
+				style="
+					display:block; color:#00017a;text-decoration: none;
+				"
+			>
+			<br>
+			I am finished with my evaluation<br>
+			<br>
+			</a>
+		</td>
+
+		<td align="center" width="33%" >
+		</td>
+	</tr>
 
 
 <table>
